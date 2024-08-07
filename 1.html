@@ -5,21 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    function NightDayHandler(self) {
+      var target = document.querySelector('body');
+      if(self.value === 'Night'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white'; 
+        self.value = 'Day';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;                                                                        
+        while (i < alist.length) {          
+          alist[i].style.color = 'green';                     
+          i = i + 1; self     }
+      } else {
+        target.style.backgroundColor = 'white'; 
+        target.style.color = 'black';
+        self.value = 'Night';
+
+        var alist = document.querySelectorAll('a');
+        var i = 0;                                                                        
+        while (i < alist.length) {          
+        alist[i].style.color = 'blue';                     
+        i = i + 1; 
+        }
+      }
+    }
+  </script>
 </head>
 <body>
   <h1><a href="1.html">WEB</a></h1>
-  <input type="button" value="Night" onclick="
-    var target = document.querySelector('body');
-    if(this.value === 'Night'){
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white'; 
-      this.value = 'Day';
-    } else {
-      target.style.backgroundColor = 'white'; 
-      target.style.color = 'black';
-      this.value = 'Night';
-    }
-">
+  <input id="Night_Day" type="button" value="Night" onclick= "NightDayHandler(this)">
   <div id="grid">
     <ol> 
       <li><a href="HTML.html">HTML</a></li>
